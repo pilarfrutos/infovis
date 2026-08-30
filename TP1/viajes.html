@@ -1,14 +1,313 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
-</head>
-<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Visualización de los viajes de Pilar Frutos entre 2004 y 2026.">
+  <title>Mis viajes | Pilar Frutos</title>
 
-  <h1>Mis viajes</h1>
-  <div class="flourish-embed flourish-map" data-src="visualisation/30085850"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/30085850/thumbnail" width="100%" alt="map visualization" /></noscript></div>
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --white: #ffffff;
+      --ink: #221c24;
+      --purple: #5a0879;
+      --violet: #9d65ba;
+      --lilac: #eadff0;
+      --muted: #716a73;
+      --line: #e7e0e9;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .mono {
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    header {
+      padding: 30px 0 105px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, .65fr);
+      gap: 90px;
+      align-items: end;
+      padding-top: 100px;
+    }
+
+    .eyebrow {
+      margin: 0 0 22px;
+      color: var(--purple);
+    }
+
+    h1, h2, h3 {
+      font-family: "Fraunces", serif;
+      font-weight: 500;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--purple);
+      font-size: clamp(76px, 11vw, 155px);
+      line-height: .82;
+      letter-spacing: -.06em;
+    }
+
+    .intro {
+      padding: 24px 0 5px 30px;
+      border-left: 3px solid var(--lilac);
+    }
+
+    .intro p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    .intro p + p {
+      margin-top: 16px;
+    }
+
+    .years {
+      display: inline-block;
+      margin-top: 25px;
+      color: var(--violet);
+    }
+
+    .visualization {
+      padding: 95px 0 110px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 24px;
+      color: var(--violet);
+    }
+
+    .section-label::after {
+      content: "";
+      width: 65px;
+      height: 1px;
+      background: var(--violet);
+    }
+
+    h2 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(48px, 6.5vw, 82px);
+      line-height: 1;
+      letter-spacing: -.045em;
+    }
+
+    .map-intro {
+      max-width: 690px;
+      margin: 24px 0 46px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.65;
+    }
+
+    .map-frame {
+      overflow: hidden;
+      padding: 10px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 20px 55px rgba(76, 8, 103, .08);
+    }
+
+    .continue {
+      margin-bottom: 110px;
+      padding: 75px 0 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .continue-title {
+      margin: 0 0 55px;
+      color: var(--purple);
+      font-size: clamp(46px, 6vw, 74px);
+    }
+
+    .future-item {
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 27px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .future-item:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .number {
+      color: var(--violet);
+      font-family: "DM Mono", monospace;
+      font-size: 12px;
+    }
+
+    .future-item h3 {
+      margin: 0;
+      font-size: clamp(25px, 3vw, 34px);
+    }
+
+    .tool {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 28px 0 42px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    @media (max-width: 800px) {
+      header { padding-bottom: 75px; }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 55px;
+        padding-top: 75px;
+      }
+      .intro {
+        max-width: 650px;
+        padding-left: 22px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .page { width: min(100% - 26px, 1180px); }
+      nav span:last-child { display: none; }
+      h1 { font-size: clamp(70px, 25vw, 105px); }
+      .visualization { padding: 75px 0 85px; }
+      .map-frame { padding: 4px; }
+      .future-item { grid-template-columns: 36px 1fr; }
+      .tool { grid-column: 2; }
+      footer { gap: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <nav class="mono">
+        <span>Pilar Frutos / Infovis</span>
+        <span>Registro personal · 2004—2026</span>
+      </nav>
+
+      <div class="hero">
+        <div>
+          <p class="eyebrow mono">Un archivo de todos mis recorridos</p>
+          <h1>Mis viajes</h1>
+        </div>
+
+        <div class="intro">
+          <p>
+            Algunos lugares fueron una visita y otros se convirtieron en
+            destinos a los que siempre termino volviendo.
+          </p>
+          <p>
+            Este dataset reúne los viajes que hice entre 2004 y 2026: los
+            países y ciudades que visité, en qué momento fui y las razones que
+            me llevaron a cada destino.
+          </p>
+          <span class="years mono">22 años de viajes</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="visualization">
+        <p class="section-label mono">01 / Flourish</p>
+        <h2>¿Qué tan recorrido está mi mundo?</h2>
+        <p class="map-intro">
+          Un mapa que muestra los países a los que fui y aquellos a los que
+          valió la pena volver. Cuanto más intenso es el color, más veces tuve
+          ganas —y la oportunidad— de regresar.
+        </p>
+
+        <div class="map-frame">
+          <div
+            class="flourish-embed flourish-map"
+            data-src="visualisation/30085850"
+            aria-label="Mapa de los países visitados por Pilar Frutos"
+          >
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+            <noscript>
+              <img
+                src="https://public.flourish.studio/visualisation/30085850/thumbnail"
+                width="100%"
+                alt="Mapa con la cantidad de visitas realizadas a cada país"
+              >
+            </noscript>
+          </div>
+        </div>
+      </section>
+
+      <section class="continue">
+        <h2 class="continue-title">El viaje continúa</h2>
+
+        <article class="future-item">
+          <span class="number">02</span>
+          <h3>Viajes por año</h3>
+          <span class="tool mono">RawGraphs</span>
+        </article>
+
+        <article class="future-item">
+          <span class="number">03</span>
+          <h3>Ciudades visitadas</h3>
+          <span class="tool mono">Datawrapper</span>
+        </article>
+
+        <article class="future-item">
+          <span class="number">04</span>
+          <h3>Motivos de viaje</h3>
+          <span class="tool mono">Tableau</span>
+        </article>
+      </section>
+    </main>
+
+    <footer class="mono">
+      <span>Visualización de datos · 2026</span>
+      <span>Pilar Frutos</span>
+    </footer>
+  </div>
 </body>
 </html>
