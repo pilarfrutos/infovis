@@ -149,6 +149,17 @@
       box-shadow: 0 20px 55px rgba(76, 8, 103, .08);
     }
 
+    .rawgraphs-frame {
+      margin: 46px 0 0;
+      padding: 18px;
+    }
+
+    .rawgraphs-chart {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
     .continue {
       margin-bottom: 110px;
       padding: 75px 0 30px;
@@ -217,6 +228,7 @@
       h1 { font-size: clamp(70px, 25vw, 105px); }
       .visualization { padding: 75px 0 85px; }
       .map-frame { padding: 4px; }
+      .rawgraphs-frame { padding: 8px; }
       .future-item { grid-template-columns: 36px 1fr; }
       .tool { grid-column: 2; }
       footer { gap: 20px; }
@@ -275,14 +287,26 @@
         </div>
       </section>
 
-      <section class="continue">
-        <h2 class="continue-title">El viaje continúa</h2>
+      <section class="visualization">
+        <p class="section-label mono">02 / RAWGraphs</p>
+        <h2>¿Cuánto tiempo pasé lejos de casa cada año?</h2>
 
-        <article class="future-item">
-          <span class="number">02</span>
-          <h3>Días fuera de casa por año</h3>
-          <span class="tool mono">RawGraphs</span>
-        </article>
+        <p class="map-intro">
+          La cantidad de días que pasé viajando dentro de Argentina y en el
+          exterior. Los datos de 2026 corresponden hasta julio.
+        </p>
+
+        <figure class="map-frame rawgraphs-frame">
+          <img
+            class="rawgraphs-chart"
+            src="viz.svg"
+            alt="Gráfico de barras apiladas con los días que pasé fuera de mi casa entre 2004 y 2026, diferenciados entre Argentina y el exterior"
+          >
+        </figure>
+      </section>
+
+      <section class="continue">
+        <h2 class="continue-title">Para la entrega...</h2>
 
         <article class="future-item">
           <span class="number">03</span>
