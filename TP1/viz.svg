@@ -28,9 +28,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="1.280775"
-     inkscape:cx="407.17534"
-     inkscape:cy="226.8158"
+     inkscape:zoom="0.91448327"
+     inkscape:cx="381.08953"
+     inkscape:cy="413.89494"
      inkscape:window-width="1335"
      inkscape:window-height="724"
      inkscape:window-x="0"
@@ -38,12 +38,13 @@
      inkscape:window-maximized="0"
      inkscape:current-layer="svg86" />
   <rect
-     width="1008"
+     width="946.99872"
      height="600"
      x="0.78077728"
      y="0.78077728"
      fill="#ffffff"
-     id="background" />
+     id="background"
+     style="stroke-width:0.969269" />
   <text
      fill="currentColor"
      x="59.50029"
@@ -194,11 +195,12 @@
              height="0"
              id="rect21" />
           <rect
-             x="680.304231262385"
-             y="537.6"
-             width="31.349224851381283"
-             height="22.399999999999977"
-             id="rect22" />
+             x="680.30426"
+             y="529.79218"
+             width="31.349224"
+             height="30.207773"
+             id="rect22"
+             style="stroke-width:1.16128" />
           <rect
              x="712.6521156311924"
              y="560"
@@ -336,11 +338,12 @@
              height="173.60000000000002"
              id="rect44" />
           <rect
-             x="680.304231262385"
-             y="436.8"
-             width="31.349224851381283"
-             height="100.79999999999995"
-             id="rect45" />
+             x="680.30426"
+             y="417.09698"
+             width="31.349224"
+             height="114.503"
+             id="rect45"
+             style="stroke-width:1.06581" />
           <rect
              x="712.6521156311924"
              y="28.000000000000025"
@@ -981,7 +984,7 @@
      fill="currentColor"
      x="739.96283"
      id="text70-0-23"
-     y="453.0011">22</text>
+     y="435.0011">26</text>
   <text
      fill="currentColor"
      x="770.80157"
@@ -1084,10 +1087,10 @@
      height="82.76239"
      x="797.95441"
      y="6.2462182" />
-	<style>
+  <style
+     id="style1">
   		text {
-    		font-family: "DM Sans", Arial, sans-serif !important;
+    		font-family: &quot;DM Sans&quot;, Arial, sans-serif !important;
   		}
 	</style>
 </svg>
-
