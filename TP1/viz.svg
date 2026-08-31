@@ -1084,4 +1084,10 @@
      height="82.76239"
      x="797.95441"
      y="6.2462182" />
+	<style>
+  		text {
+    		font-family: "DM Sans", Arial, sans-serif !important;
+  		}
+	</style>
 </svg>
+
