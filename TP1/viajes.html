@@ -33,7 +33,7 @@
     }
 
     .page {
-      width: min(1180px, calc(100% - 48px));
+      width: min(1080px, calc(100% - clamp(40px, 8vw, 128px)));
       margin: 0 auto;
     }
 
@@ -213,7 +213,7 @@
     }
 
     @media (max-width: 540px) {
-      .page { width: min(100% - 26px, 1180px); }
+      .page { width: calc(100% - 40px); }
       nav span:last-child { display: none; }
       h1 { font-size: clamp(70px, 25vw, 105px); }
       .visualization { padding: 75px 0 85px; }
