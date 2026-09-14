@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Visualización de los viajes de Pilar Frutos entre 2004 y 2026.">
   <title>Mis viajes | Pilar Frutos</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%235a0879'/%3E%3Ccircle cx='24' cy='24' r='15' fill='none' stroke='white' stroke-width='2.6'/%3E%3Cpath d='M9 24h30M24 9c-5 4-8 10-8 15s3 11 8 15M24 9c5 4 8 10 8 15s-3 11-8 15' fill='none' stroke='white' stroke-width='2.2'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,9 +44,7 @@
       text-transform: uppercase;
     }
 
-    header {
-      padding: 30px 0 105px;
-    }
+    header { padding: 30px 0 105px; }
 
     nav {
       display: flex;
@@ -63,10 +62,7 @@
       padding-top: 100px;
     }
 
-    .eyebrow {
-      margin: 0 0 22px;
-      color: var(--purple);
-    }
+    .eyebrow { margin: 0 0 22px; color: var(--purple); }
 
     h1, h2, h3 {
       font-family: "Fraunces", serif;
@@ -94,9 +90,7 @@
       line-height: 1.65;
     }
 
-    .intro p + p {
-      margin-top: 16px;
-    }
+    .intro p + p { margin-top: 16px; }
 
     .years {
       display: inline-block;
@@ -160,6 +154,10 @@
       height: auto;
     }
 
+    .datawrapper-frame {
+      padding: 18px;
+    }
+
     .continue {
       margin-bottom: 110px;
       padding: 75px 0 30px;
@@ -181,9 +179,7 @@
       border-top: 1px solid var(--line);
     }
 
-    .future-item:last-child {
-      border-bottom: 1px solid var(--line);
-    }
+    .future-item:last-child { border-bottom: 1px solid var(--line); }
 
     .number {
       color: var(--violet);
@@ -196,10 +192,7 @@
       font-size: clamp(25px, 3vw, 34px);
     }
 
-    .tool {
-      color: var(--muted);
-      white-space: nowrap;
-    }
+    .tool { color: var(--muted); white-space: nowrap; }
 
     footer {
       display: flex;
@@ -216,10 +209,7 @@
         gap: 55px;
         padding-top: 75px;
       }
-      .intro {
-        max-width: 650px;
-        padding-left: 22px;
-      }
+      .intro { max-width: 650px; padding-left: 22px; }
     }
 
     @media (max-width: 540px) {
@@ -228,7 +218,7 @@
       h1 { font-size: clamp(70px, 25vw, 105px); }
       .visualization { padding: 75px 0 85px; }
       .map-frame { padding: 4px; }
-      .rawgraphs-frame { padding: 8px; }
+      .rawgraphs-frame, .datawrapper-frame { padding: 8px; }
       .future-item { grid-template-columns: 36px 1fr; }
       .tool { grid-column: 2; }
       footer { gap: 20px; }
@@ -245,9 +235,7 @@
       </nav>
 
       <div class="hero">
-        <div>
-          <h1>Mis viajes</h1>
-        </div>
+        <div><h1>Mis viajes</h1></div>
 
         <div class="intro">
           <p>
@@ -266,9 +254,7 @@
 
     <main>
       <section class="visualization">
-        <h2>Países visitados entre 2004 y 2026</h2>
-
-        <div class="map-frame" style="margin-top: 60px;">
+        <div class="map-frame">
           <div
             class="flourish-embed flourish-map"
             data-src="visualisation/30085850"
@@ -300,14 +286,19 @@
         </figure>
       </section>
 
+      <section class="visualization">
+        <div class="map-frame datawrapper-frame">
+          <div style="min-height:996px" id="datawrapper-vis-Scsod">
+            <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/Scsod/embed.js" charset="utf-8" data-target="#datawrapper-vis-Scsod"></script>
+            <noscript>
+              <img src="https://datawrapper.dwcdn.net/Scsod/full.png" width="100%" alt="¿En qué mes me suelo escapar más de casa? Tabla de tramos de viaje por mes y año">
+            </noscript>
+          </div>
+        </div>
+      </section>
+
       <section class="continue">
         <h2 class="continue-title">Para la entrega...</h2>
-
-        <article class="future-item">
-          <span class="number">03</span>
-          <h3>Ciudades visitadas</h3>
-          <span class="tool mono">Datawrapper</span>
-        </article>
 
         <article class="future-item">
           <span class="number">04</span>
