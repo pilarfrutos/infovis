@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Visualización de los viajes de Pilar Frutos entre 2004 y 2026.">
   <title>Mis viajes | Pilar Frutos</title>
+
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%235a0879'/%3E%3Ccircle cx='24' cy='24' r='15' fill='none' stroke='white' stroke-width='2.6'/%3E%3Cpath d='M9 24h30M24 9c-5 4-8 10-8 15s3 11 8 15M24 9c5 4 8 10 8 15s-3 11-8 15' fill='none' stroke='white' stroke-width='2.2'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,8 +24,13 @@
       --line: #e7e0e9;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -44,7 +51,11 @@
       text-transform: uppercase;
     }
 
-    header { padding: 30px 0 105px; }
+    /* HEADER */
+
+    header {
+      padding: 30px 0 85px;
+    }
 
     nav {
       display: flex;
@@ -55,16 +66,10 @@
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, .65fr);
-      gap: 90px;
-      align-items: end;
-      padding-top: 100px;
+      padding-top: 85px;
     }
 
-    .eyebrow { margin: 0 0 22px; color: var(--purple); }
-
-    h1, h2, h3 {
+    h1, h2 {
       font-family: "Fraunces", serif;
       font-weight: 500;
     }
@@ -77,29 +82,10 @@
       letter-spacing: -.06em;
     }
 
-    .intro {
-      padding: 24px 0 5px 30px;
-      border-left: 3px solid var(--lilac);
-    }
-
-    .intro p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 1.65;
-    }
-
-    .intro p + p { margin-top: 16px; }
-
-    .years {
-      display: inline-block;
-      margin-top: 25px;
-      color: var(--violet);
-    }
+    /* SECCIONES */
 
     .visualization {
-      padding: 95px 0 110px;
+      padding: 85px 0 100px;
       border-top: 1px solid var(--line);
     }
 
@@ -134,6 +120,8 @@
       line-height: 1.65;
     }
 
+    /* FRAMES */
+
     .map-frame {
       overflow: hidden;
       padding: 10px;
@@ -148,51 +136,22 @@
       padding: 18px;
     }
 
-    .rawgraphs-chart {
+    .rawgraphs-frame object {
       display: block;
       width: 100%;
       height: auto;
+      min-height: 600px;
     }
 
     .datawrapper-frame {
       padding: 18px;
     }
 
-    .continue {
-      margin-bottom: 110px;
-      padding: 75px 0 30px;
-      border-top: 1px solid var(--line);
+    .tableau-frame {
+      padding: 10px;
     }
 
-    .continue-title {
-      margin: 0 0 55px;
-      color: var(--purple);
-      font-size: clamp(46px, 6vw, 74px);
-    }
-
-    .future-item {
-      display: grid;
-      grid-template-columns: 60px 1fr auto;
-      gap: 24px;
-      align-items: center;
-      padding: 27px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .future-item:last-child { border-bottom: 1px solid var(--line); }
-
-    .number {
-      color: var(--violet);
-      font-family: "DM Mono", monospace;
-      font-size: 12px;
-    }
-
-    .future-item h3 {
-      margin: 0;
-      font-size: clamp(25px, 3vw, 34px);
-    }
-
-    .tool { color: var(--muted); white-space: nowrap; }
+    /* FOOTER */
 
     footer {
       display: flex;
@@ -202,65 +161,85 @@
       color: var(--muted);
     }
 
+    /* RESPONSIVE */
+
     @media (max-width: 800px) {
-      header { padding-bottom: 75px; }
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 55px;
-        padding-top: 75px;
+      header {
+        padding-bottom: 65px;
       }
-      .intro { max-width: 650px; padding-left: 22px; }
+
+      .hero {
+        padding-top: 65px;
+      }
     }
 
     @media (max-width: 540px) {
-      .page { width: calc(100% - 40px); }
-      nav span:last-child { display: none; }
-      h1 { font-size: clamp(70px, 25vw, 105px); }
-      .visualization { padding: 75px 0 85px; }
-      .map-frame { padding: 4px; }
-      .rawgraphs-frame, .datawrapper-frame { padding: 8px; }
-      .future-item { grid-template-columns: 36px 1fr; }
-      .tool { grid-column: 2; }
-      footer { gap: 20px; }
+      .page {
+        width: calc(100% - 40px);
+      }
+
+      nav span:last-child {
+        display: none;
+      }
+
+      h1 {
+        font-size: clamp(70px, 25vw, 105px);
+      }
+
+      .visualization {
+        padding: 65px 0 75px;
+      }
+
+      .map-frame {
+        padding: 4px;
+      }
+
+      .rawgraphs-frame,
+      .datawrapper-frame {
+        padding: 8px;
+      }
+
+      footer {
+        gap: 20px;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <div class="page">
+
+    <!-- HEADER -->
     <header>
+
       <nav class="mono">
         <span>Pilar Frutos / Infovis</span>
         <span>Registro personal · 2004—2026</span>
       </nav>
 
       <div class="hero">
-        <div><h1>Mis viajes</h1></div>
-
-        <div class="intro">
-          <p>
-            Algunos lugares fueron una visita y otros se convirtieron en
-            destinos a los que siempre termino volviendo.
-          </p>
-          <p>
-            Este dataset reúne los viajes que hice entre 2004 y 2026: los
-            países y ciudades que visité, en qué momento fui y las razones que
-            me llevaron a cada destino.
-          </p>
-          <span class="years mono">22 años de viajes</span>
-        </div>
+        <h1>Mis viajes</h1>
       </div>
+
     </header>
 
+
     <main>
+
+      <!-- FLOURISH -->
       <section class="visualization">
+
         <div class="map-frame">
+
           <div
             class="flourish-embed flourish-map"
             data-src="visualisation/30085850"
             aria-label="Mapa de los países visitados por Pilar Frutos"
           >
+
             <script src="https://public.flourish.studio/resources/embed.js"></script>
+
             <noscript>
               <img
                 src="https://public.flourish.studio/visualisation/30085850/thumbnail"
@@ -268,12 +247,19 @@
                 alt="Mapa con la cantidad de visitas realizadas a cada país"
               >
             </noscript>
+
           </div>
+
         </div>
+
       </section>
 
+
+      <!-- RAWGRAPHS -->
       <section class="visualization">
+
         <p class="section-label mono">RAWGraphs</p>
+
         <h2>¿Cuánto tiempo pasé lejos de mi casa cada año?</h2>
 
         <p class="map-intro">
@@ -282,80 +268,191 @@
         </p>
 
         <figure class="map-frame rawgraphs-frame">
-          <object type="image/svg+xml" data="./viz.svg"></object>
+          <object
+            type="image/svg+xml"
+            data="./viz.svg">
+          </object>
         </figure>
+
       </section>
 
+
+      <!-- DATAWRAPPER -->
       <section class="visualization">
+
         <div class="map-frame datawrapper-frame">
-          <div style="min-height:996px" id="datawrapper-vis-Scsod">
-            <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/Scsod/embed.js" charset="utf-8" data-target="#datawrapper-vis-Scsod"></script>
+
+          <div
+            style="min-height:996px"
+            id="datawrapper-vis-Scsod"
+          >
+
+            <script
+              type="text/javascript"
+              defer
+              src="https://datawrapper.dwcdn.net/Scsod/embed.js"
+              charset="utf-8"
+              data-target="#datawrapper-vis-Scsod">
+            </script>
+
             <noscript>
-              <img src="https://datawrapper.dwcdn.net/Scsod/full.png" width="100%" alt="¿En qué mes me suelo escapar más de casa? Tabla de tramos de viaje por mes y año">
+              <img
+                src="https://datawrapper.dwcdn.net/Scsod/full.png"
+                width="100%"
+                alt="¿En qué mes me suelo escapar más de casa?"
+              >
             </noscript>
+
           </div>
+
         </div>
+
       </section>
 
+
+      <!-- TABLEAU -->
       <section class="visualization">
-        <p class="section-label mono">Tableau</p>
-      
+
         <div class="map-frame tableau-frame">
+
           <div
             class="tableauPlaceholder"
             id="viz1789856574217"
             style="position: relative"
           >
+
             <noscript>
+
               <a href="#">
+
                 <img
                   alt="¿Por qué viajé a lo largo de los años?"
                   src="https://public.tableau.com/static/images/Po/Porquviajalolargodelosaos/Hoja1/1_rss.png"
                   style="border: none; width: 100%;"
                 >
+
               </a>
+
             </noscript>
-      
-            <object class="tableauViz" style="display:none;">
-              <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F">
-              <param name="embed_code_version" value="3">
-              <param name="site_root" value="">
-              <param name="name" value="Porquviajalolargodelosaos/Hoja1">
-              <param name="tabs" value="no">
-              <param name="toolbar" value="no">
+
+            <object
+              class="tableauViz"
+              style="display:none;"
+            >
+
+              <param
+                name="host_url"
+                value="https%3A%2F%2Fpublic.tableau.com%2F"
+              >
+
+              <param
+                name="embed_code_version"
+                value="3"
+              >
+
+              <param
+                name="site_root"
+                value=""
+              >
+
+              <param
+                name="name"
+                value="Porquviajalolargodelosaos/Hoja1"
+              >
+
+              <param
+                name="tabs"
+                value="no"
+              >
+
+              <param
+                name="toolbar"
+                value="no"
+              >
+
               <param
                 name="static_image"
                 value="https://public.tableau.com/static/images/Po/Porquviajalolargodelosaos/Hoja1/1.png"
               >
-              <param name="animate_transition" value="yes">
-              <param name="display_static_image" value="yes">
-              <param name="display_spinner" value="yes">
-              <param name="display_overlay" value="yes">
-              <param name="display_count" value="no">
-              <param name="language" value="es-ES">
+
+              <param
+                name="animate_transition"
+                value="yes"
+              >
+
+              <param
+                name="display_static_image"
+                value="yes"
+              >
+
+              <param
+                name="display_spinner"
+                value="yes"
+              >
+
+              <param
+                name="display_overlay"
+                value="yes"
+              >
+
+              <param
+                name="display_count"
+                value="no"
+              >
+
+              <param
+                name="language"
+                value="es-ES"
+              >
+
             </object>
+
           </div>
+
         </div>
-      
+
         <script type="text/javascript">
-          var divElement = document.getElementById("viz1789856574217");
-          var vizElement = divElement.getElementsByTagName("object")[0];
-      
+
+          var divElement =
+            document.getElementById("viz1789856574217");
+
+          var vizElement =
+            divElement.getElementsByTagName("object")[0];
+
           vizElement.style.width = "100%";
-          vizElement.style.height = (divElement.offsetWidth * 0.75) + "px";
-      
-          var scriptElement = document.createElement("script");
+
+          vizElement.style.height =
+            (divElement.offsetWidth * 0.75) + "px";
+
+          var scriptElement =
+            document.createElement("script");
+
           scriptElement.src =
             "https://public.tableau.com/javascripts/api/viz_v1.js";
-      
-          vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+          vizElement.parentNode.insertBefore(
+            scriptElement,
+            vizElement
+          );
+
         </script>
+
       </section>
 
+    </main>
+
+
+    <!-- FOOTER -->
     <footer class="mono">
+
       <span>Visualización de datos · 2026</span>
+
       <span>Pilar Frutos</span>
+
     </footer>
+
   </div>
+
 </body>
 </html>
+```
