@@ -1,19 +1,34 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Visualización de los viajes de Pilar Frutos entre 2004 y 2026.">
+
+  <meta
+    name="description"
+    content="Visualización de los viajes de Pilar Frutos entre 2004 y 2026."
+  >
+
   <title>Mis viajes | Pilar Frutos</title>
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%235a0879'/%3E%3Ccircle cx='24' cy='24' r='15' fill='none' stroke='white' stroke-width='2.6'/%3E%3Cpath d='M9 24h30M24 9c-5 4-8 10-8 15s3 11 8 15M24 9c5 4 8 10 8 15s-3 11-8 15' fill='none' stroke='white' stroke-width='2.2'/%3E%3C/svg%3E">
+  <!-- FAVICON -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%235a0879'/%3E%3Ccircle cx='24' cy='24' r='15' fill='none' stroke='white' stroke-width='2.6'/%3E%3Cpath d='M9 24h30M24 9c-5 4-8 10-8 15s3 11 8 15M24 9c5 4 8 10 8 15s-3 11-8 15' fill='none' stroke='white' stroke-width='2.2'/%3E%3C/svg%3E"
+  >
 
+  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
     :root {
       --white: #ffffff;
       --ink: #221c24;
@@ -40,7 +55,11 @@
     }
 
     .page {
-      width: min(1080px, calc(100% - clamp(40px, 8vw, 128px)));
+      width: min(
+        1080px,
+        calc(100% - clamp(40px, 8vw, 128px))
+      );
+
       margin: 0 auto;
     }
 
@@ -51,129 +70,196 @@
       text-transform: uppercase;
     }
 
-    /* HEADER */
 
     header {
-      padding: 30px 0 85px;
+      padding: 30px 0 80px;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
+
       padding-bottom: 20px;
+
       border-bottom: 1px solid var(--line);
+
       color: var(--muted);
     }
 
     .hero {
-      padding-top: 85px;
+      padding-top: 80px;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
       font-family: "Fraunces", serif;
       font-weight: 500;
     }
 
     h1 {
       margin: 0;
+
       color: var(--purple);
+
       font-size: clamp(76px, 11vw, 155px);
+
       line-height: .82;
+
       letter-spacing: -.06em;
     }
 
-    /* SECCIONES */
+
 
     .visualization {
-      padding: 85px 0 100px;
+      padding: 80px 0 95px;
+
       border-top: 1px solid var(--line);
     }
 
     .section-label {
       display: flex;
       align-items: center;
+
       gap: 14px;
+
       margin: 0 0 24px;
+
       color: var(--violet);
     }
 
     .section-label::after {
       content: "";
+
       width: 65px;
       height: 1px;
+
       background: var(--violet);
     }
 
     h2 {
       max-width: 850px;
+
       margin: 0;
+
       font-size: clamp(48px, 6.5vw, 82px);
+
       line-height: 1;
+
       letter-spacing: -.045em;
     }
 
     .map-intro {
       max-width: 690px;
+
       margin: 24px 0 46px;
+
       color: var(--muted);
+
       font-size: 19px;
+
       line-height: 1.65;
     }
 
-    /* FRAMES */
 
     .map-frame {
       overflow: hidden;
+
       padding: 10px;
+
       background: var(--white);
+
       border: 1px solid var(--line);
+
       border-radius: 12px;
-      box-shadow: 0 20px 55px rgba(76, 8, 103, .08);
+
+      box-shadow:
+        0 20px 55px rgba(76, 8, 103, .08);
     }
+
+
+
+    .flourish-embed {
+      width: 100%;
+    }
+
 
     .rawgraphs-frame {
       margin: 46px 0 0;
+
       padding: 18px;
     }
 
     .rawgraphs-frame object {
       display: block;
+
       width: 100%;
-      height: auto;
+
       min-height: 600px;
     }
 
+
+
     .datawrapper-frame {
-      padding: 18px;
+      padding: 10px;
     }
+
+    #datawrapper-vis-Scsod {
+      width: 100%;
+
+      min-height: 680px;
+    }
+
+    #datawrapper-vis-Scsod iframe {
+      display: block;
+
+      width: 100% !important;
+
+      border: 0;
+    }
+
+
 
     .tableau-frame {
       padding: 10px;
     }
 
-    /* FOOTER */
+    .tableauPlaceholder {
+      width: 100%;
+    }
+
 
     footer {
       display: flex;
+
       justify-content: space-between;
+
       padding: 28px 0 42px;
+
       border-top: 1px solid var(--line);
+
       color: var(--muted);
     }
 
-    /* RESPONSIVE */
 
     @media (max-width: 800px) {
+
       header {
-        padding-bottom: 65px;
+        padding-bottom: 60px;
       }
 
       .hero {
-        padding-top: 65px;
+        padding-top: 60px;
       }
+
+      .visualization {
+        padding: 65px 0 80px;
+      }
+
     }
 
+
     @media (max-width: 540px) {
+
       .page {
         width: calc(100% - 40px);
       }
@@ -183,11 +269,15 @@
       }
 
       h1 {
-        font-size: clamp(70px, 25vw, 105px);
+        font-size: clamp(
+          70px,
+          25vw,
+          105px
+        );
       }
 
       .visualization {
-        padding: 65px 0 75px;
+        padding: 55px 0 70px;
       }
 
       .map-frame {
@@ -196,263 +286,321 @@
 
       .rawgraphs-frame,
       .datawrapper-frame {
-        padding: 8px;
+        padding: 6px;
+      }
+
+      #datawrapper-vis-Scsod {
+        min-height: 600px;
       }
 
       footer {
         gap: 20px;
       }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <div class="page">
-
-    <!-- HEADER -->
-    <header>
-
-      <nav class="mono">
-        <span>Pilar Frutos / Infovis</span>
-        <span>Registro personal · 2004—2026</span>
-      </nav>
-
-      <div class="hero">
-        <h1>Mis viajes</h1>
-      </div>
-
-    </header>
+<div class="page">
 
 
-    <main>
+  <header>
 
-      <!-- FLOURISH -->
-      <section class="visualization">
+    <nav class="mono">
 
-        <div class="map-frame">
+      <span>
+        Pilar Frutos / Infovis
+      </span>
 
-          <div
-            class="flourish-embed flourish-map"
-            data-src="visualisation/30085850"
-            aria-label="Mapa de los países visitados por Pilar Frutos"
-          >
+      <span>
+        Registro personal · 2004—2026
+      </span>
 
-            <script src="https://public.flourish.studio/resources/embed.js"></script>
-
-            <noscript>
-              <img
-                src="https://public.flourish.studio/visualisation/30085850/thumbnail"
-                width="100%"
-                alt="Mapa con la cantidad de visitas realizadas a cada país"
-              >
-            </noscript>
-
-          </div>
-
-        </div>
-
-      </section>
+    </nav>
 
 
-      <!-- RAWGRAPHS -->
-      <section class="visualization">
+    <div class="hero">
 
-        <p class="section-label mono">RAWGraphs</p>
+      <h1>
+        Mis viajes
+      </h1>
 
-        <h2>¿Cuánto tiempo pasé lejos de mi casa cada año?</h2>
+    </div>
 
-        <p class="map-intro">
-          La cantidad de días que pasé viajando dentro de Argentina y en el
-          exterior. Los datos de 2026 corresponden hasta julio.
-        </p>
-
-        <figure class="map-frame rawgraphs-frame">
-          <object
-            type="image/svg+xml"
-            data="./viz.svg">
-          </object>
-        </figure>
-
-      </section>
+  </header>
 
 
-      <!-- DATAWRAPPER -->
-      <section class="visualization">
 
-        <div class="map-frame datawrapper-frame">
-
-          <div
-            style="min-height:996px"
-            id="datawrapper-vis-Scsod"
-          >
-
-            <script
-              type="text/javascript"
-              defer
-              src="https://datawrapper.dwcdn.net/Scsod/embed.js"
-              charset="utf-8"
-              data-target="#datawrapper-vis-Scsod">
-            </script>
-
-            <noscript>
-              <img
-                src="https://datawrapper.dwcdn.net/Scsod/full.png"
-                width="100%"
-                alt="¿En qué mes me suelo escapar más de casa?"
-              >
-            </noscript>
-
-          </div>
-
-        </div>
-
-      </section>
+  <main>
 
 
-      <!-- TABLEAU -->
-      <section class="visualization">
+    <section class="visualization">
 
-        <div class="map-frame tableau-frame">
+      <div class="map-frame">
 
-          <div
-            class="tableauPlaceholder"
-            id="viz1789856574217"
-            style="position: relative"
-          >
+        <div
+          class="flourish-embed flourish-map"
+          data-src="visualisation/30085850"
+          aria-label="Mapa de los países visitados por Pilar Frutos"
+        >
 
-            <noscript>
+          <script
+            src="https://public.flourish.studio/resources/embed.js">
+          </script>
 
-              <a href="#">
+          <noscript>
 
-                <img
-                  alt="¿Por qué viajé a lo largo de los años?"
-                  src="https://public.tableau.com/static/images/Po/Porquviajalolargodelosaos/Hoja1/1_rss.png"
-                  style="border: none; width: 100%;"
-                >
-
-              </a>
-
-            </noscript>
-
-            <object
-              class="tableauViz"
-              style="display:none;"
+            <img
+              src="https://public.flourish.studio/visualisation/30085850/thumbnail"
+              width="100%"
+              alt="Mapa con la cantidad de visitas realizadas a cada país"
             >
 
-              <param
-                name="host_url"
-                value="https%3A%2F%2Fpublic.tableau.com%2F"
-              >
-
-              <param
-                name="embed_code_version"
-                value="3"
-              >
-
-              <param
-                name="site_root"
-                value=""
-              >
-
-              <param
-                name="name"
-                value="Porquviajalolargodelosaos/Hoja1"
-              >
-
-              <param
-                name="tabs"
-                value="no"
-              >
-
-              <param
-                name="toolbar"
-                value="no"
-              >
-
-              <param
-                name="static_image"
-                value="https://public.tableau.com/static/images/Po/Porquviajalolargodelosaos/Hoja1/1.png"
-              >
-
-              <param
-                name="animate_transition"
-                value="yes"
-              >
-
-              <param
-                name="display_static_image"
-                value="yes"
-              >
-
-              <param
-                name="display_spinner"
-                value="yes"
-              >
-
-              <param
-                name="display_overlay"
-                value="yes"
-              >
-
-              <param
-                name="display_count"
-                value="no"
-              >
-
-              <param
-                name="language"
-                value="es-ES"
-              >
-
-            </object>
-
-          </div>
+          </noscript>
 
         </div>
 
-        <script type="text/javascript">
+      </div>
 
-          var divElement =
-            document.getElementById("viz1789856574217");
+    </section>
 
-          var vizElement =
-            divElement.getElementsByTagName("object")[0];
 
-          vizElement.style.width = "100%";
+    <section class="visualization">
 
-          vizElement.style.height =
-            (divElement.offsetWidth * 0.75) + "px";
+      <p class="section-label mono">
+        RAWGraphs
+      </p>
 
-          var scriptElement =
-            document.createElement("script");
+      <h2>
+        ¿Cuánto tiempo pasé lejos de mi casa cada año?
+      </h2>
 
-          scriptElement.src =
-            "https://public.tableau.com/javascripts/api/viz_v1.js";
+      <p class="map-intro">
+        La cantidad de días que pasé viajando dentro de Argentina
+        y en el exterior. Los datos de 2026 corresponden hasta julio.
+      </p>
 
-          vizElement.parentNode.insertBefore(
-            scriptElement,
-            vizElement
+
+      <figure class="map-frame rawgraphs-frame">
+
+        <object
+          type="image/svg+xml"
+          data="./viz.svg">
+        </object>
+
+      </figure>
+
+    </section>
+
+
+    <section class="visualization">
+
+      <div class="map-frame datawrapper-frame">
+
+        <div
+          id="datawrapper-vis-Scsod"
+          style="min-height:680px"
+        >
+
+          <script
+            type="text/javascript"
+            defer
+            src="https://datawrapper.dwcdn.net/Scsod/embed.js"
+            charset="utf-8"
+            data-target="#datawrapper-vis-Scsod">
+          </script>
+
+
+          <noscript>
+
+            <img
+              src="https://datawrapper.dwcdn.net/Scsod/full.png"
+              width="100%"
+              alt="¿En qué mes me suelo escapar más de casa?"
+            >
+
+          </noscript>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="visualization">
+
+      <div class="map-frame tableau-frame">
+
+
+        <div
+          class="tableauPlaceholder"
+          id="viz1789856574217"
+          style="position: relative"
+        >
+
+
+          <noscript>
+
+            <a href="#">
+
+              <img
+                alt="¿Por qué viajé a lo largo de los años?"
+                src="https://public.tableau.com/static/images/Po/Porquviajalolargodelosaos/Hoja1/1_rss.png"
+                style="
+                  border: none;
+                  width: 100%;
+                "
+              >
+
+            </a>
+
+          </noscript>
+
+
+
+          <object
+            class="tableauViz"
+            style="display:none;"
+          >
+
+            <param
+              name="host_url"
+              value="https%3A%2F%2Fpublic.tableau.com%2F"
+            >
+
+            <param
+              name="embed_code_version"
+              value="3"
+            >
+
+            <param
+              name="site_root"
+              value=""
+            >
+
+            <param
+              name="name"
+              value="Porquviajalolargodelosaos/Hoja1"
+            >
+
+            <param
+              name="tabs"
+              value="no"
+            >
+
+            <param
+              name="toolbar"
+              value="no"
+            >
+
+            <param
+              name="static_image"
+              value="https://public.tableau.com/static/images/Po/Porquviajalolargodelosaos/Hoja1/1.png"
+            >
+
+            <param
+              name="animate_transition"
+              value="yes"
+            >
+
+            <param
+              name="display_static_image"
+              value="yes"
+            >
+
+            <param
+              name="display_spinner"
+              value="yes"
+            >
+
+            <param
+              name="display_overlay"
+              value="yes"
+            >
+
+            <param
+              name="display_count"
+              value="no"
+            >
+
+            <param
+              name="language"
+              value="es-ES"
+            >
+
+          </object>
+
+        </div>
+
+      </div>
+
+
+
+      <script type="text/javascript">
+
+        var divElement =
+          document.getElementById(
+            "viz1789856574217"
           );
 
-        </script>
+        var vizElement =
+          divElement.getElementsByTagName(
+            "object"
+          )[0];
 
-      </section>
 
-    </main>
+        vizElement.style.width =
+          "100%";
 
 
-    <!-- FOOTER -->
-    <footer class="mono">
+        vizElement.style.height =
+          (divElement.offsetWidth * 0.75)
+          + "px";
 
-      <span>Visualización de datos · 2026</span>
 
-      <span>Pilar Frutos</span>
+        var scriptElement =
+          document.createElement(
+            "script"
+          );
 
-    </footer>
 
-  </div>
+        scriptElement.src =
+          "https://public.tableau.com/javascripts/api/viz_v1.js";
+
+
+        vizElement.parentNode.insertBefore(
+          scriptElement,
+          vizElement
+        );
+
+      </script>
+
+    </section>
+
+
+  </main>
+
+
+  <footer class="mono">
+
+    <span>
+      Visualización de datos · 2026
+    </span>
+
+    <span>
+      Pilar Frutos
+    </span>
+
+  </footer>
+
+
+</div>
 
 </body>
 </html>
-```
