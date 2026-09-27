@@ -70,7 +70,6 @@
       text-transform: uppercase;
     }
 
-
     header {
       padding: 30px 0 80px;
     }
@@ -107,8 +106,6 @@
 
       letter-spacing: -.06em;
     }
-
-
 
     .visualization {
       padding: 80px 0 95px;
@@ -160,7 +157,6 @@
       line-height: 1.65;
     }
 
-
     .map-frame {
       overflow: hidden;
 
@@ -176,12 +172,9 @@
         0 20px 55px rgba(76, 8, 103, .08);
     }
 
-
-
     .flourish-embed {
       width: 100%;
     }
-
 
     .rawgraphs-frame {
       margin: 46px 0 0;
@@ -197,27 +190,24 @@
       min-height: 600px;
     }
 
-
+    /* DATAWRAPPER */
 
     .datawrapper-frame {
       padding: 10px;
     }
 
-    #datawrapper-vis-Scsod {
+    #datawrapper-vis-yoYDA {
       width: 100%;
-
-      min-height: 680px;
+      min-height: 223px;
     }
 
-    #datawrapper-vis-Scsod iframe {
+    #datawrapper-vis-yoYDA iframe {
       display: block;
 
       width: 100% !important;
 
       border: 0;
     }
-
-
 
     .tableau-frame {
       padding: 10px;
@@ -226,7 +216,6 @@
     .tableauPlaceholder {
       width: 100%;
     }
-
 
     footer {
       display: flex;
@@ -239,7 +228,6 @@
 
       color: var(--muted);
     }
-
 
     @media (max-width: 800px) {
 
@@ -256,7 +244,6 @@
       }
 
     }
-
 
     @media (max-width: 540px) {
 
@@ -289,8 +276,8 @@
         padding: 6px;
       }
 
-      #datawrapper-vis-Scsod {
-        min-height: 600px;
+      #datawrapper-vis-yoYDA {
+        min-height: 223px;
       }
 
       footer {
@@ -339,6 +326,8 @@
   <main>
 
 
+    <!-- FLOURISH -->
+
     <section class="visualization">
 
       <div class="map-frame">
@@ -370,6 +359,9 @@
     </section>
 
 
+
+    <!-- RAWGRAPHS -->
+
     <section class="visualization">
 
       <p class="section-label mono">
@@ -398,30 +390,32 @@
     </section>
 
 
+
+    <!-- DATAWRAPPER -->
+
     <section class="visualization">
 
       <div class="map-frame datawrapper-frame">
 
         <div
-          id="datawrapper-vis-Scsod"
-          style="min-height:680px"
+          id="datawrapper-vis-yoYDA"
+          style="min-height:223px"
         >
 
           <script
             type="text/javascript"
             defer
-            src="https://datawrapper.dwcdn.net/Scsod/embed.js"
+            src="https://datawrapper.dwcdn.net/yoYDA/embed.js"
             charset="utf-8"
-            data-target="#datawrapper-vis-Scsod">
+            data-target="#datawrapper-vis-yoYDA">
           </script>
-
 
           <noscript>
 
             <img
-              src="https://datawrapper.dwcdn.net/Scsod/full.png"
+              src="https://datawrapper.dwcdn.net/yoYDA/full.png"
               width="100%"
-              alt="¿En qué mes me suelo escapar más de casa?"
+              alt="¿Cómo fue cambiando la gente con la que viajo? (Dot Plot)"
             >
 
           </noscript>
@@ -432,6 +426,9 @@
 
     </section>
 
+
+
+    <!-- TABLEAU -->
 
     <section class="visualization">
 
