@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,6 +71,10 @@
       text-transform: uppercase;
     }
 
+    /* =========================
+       HEADER
+       ========================= */
+
     header {
       padding: 30px 0 80px;
     }
@@ -89,16 +94,13 @@
       padding-top: 80px;
     }
 
-    h1,
-    h2 {
-      font-family: "Fraunces", serif;
-      font-weight: 500;
-    }
-
     h1 {
       margin: 0;
 
       color: var(--purple);
+
+      font-family: "Fraunces", serif;
+      font-weight: 500;
 
       font-size: clamp(76px, 11vw, 155px);
 
@@ -106,6 +108,10 @@
 
       letter-spacing: -.06em;
     }
+
+    /* =========================
+       GENERAL VISUALIZATIONS
+       ========================= */
 
     .visualization {
       padding: 80px 0 95px;
@@ -133,30 +139,6 @@
       background: var(--violet);
     }
 
-    h2 {
-      max-width: 850px;
-
-      margin: 0;
-
-      font-size: clamp(48px, 6.5vw, 82px);
-
-      line-height: 1;
-
-      letter-spacing: -.045em;
-    }
-
-    .map-intro {
-      max-width: 690px;
-
-      margin: 24px 0 46px;
-
-      color: var(--muted);
-
-      font-size: 19px;
-
-      line-height: 1.65;
-    }
-
     .map-frame {
       overflow: hidden;
 
@@ -171,6 +153,10 @@
       box-shadow:
         0 20px 55px rgba(76, 8, 103, .08);
     }
+
+    /* =========================
+       FLOURISH
+       ========================= */
 
     .flourish-embed {
       width: 100%;
@@ -260,6 +246,10 @@
       width: 100%;
     }
 
+    /* =========================
+       FOOTER
+       ========================= */
+
     footer {
       display: flex;
 
@@ -271,6 +261,10 @@
 
       color: var(--muted);
     }
+
+    /* =========================
+       RESPONSIVE
+       ========================= */
 
     @media (max-width: 800px) {
 
@@ -347,6 +341,10 @@
 <div class="page">
 
 
+  <!-- =========================
+       HEADER
+       ========================= -->
+
   <header>
 
     <nav class="mono">
@@ -377,7 +375,9 @@
   <main>
 
 
-    <!-- FLOURISH -->
+    <!-- =========================
+         FLOURISH
+         ========================= -->
 
     <section class="visualization">
 
@@ -411,7 +411,9 @@
 
 
 
-    <!-- RAWGRAPHS -->
+    <!-- =========================
+         RAWGRAPHS
+         ========================= -->
 
     <section class="visualization rawgraphs-section">
 
@@ -419,9 +421,11 @@
         RAWGraphs
       </p>
 
+
       <h2>
         ¿Cuánto tiempo pasé lejos de mi casa cada año?
       </h2>
+
 
       <p class="map-intro">
         La cantidad de días que pasé viajando dentro de Argentina
@@ -433,7 +437,7 @@
 
         <object
           type="image/svg+xml"
-          data="./rawgraph.svg">
+          data="./rawgraph.svg?v=2">
         </object>
 
       </figure>
@@ -442,7 +446,9 @@
 
 
 
-    <!-- DATAWRAPPER -->
+    <!-- =========================
+         DATAWRAPPER
+         ========================= -->
 
     <section class="visualization">
 
@@ -479,7 +485,9 @@
 
 
 
-    <!-- TABLEAU -->
+    <!-- =========================
+         TABLEAU
+         ========================= -->
 
     <section class="visualization">
 
@@ -635,6 +643,11 @@
   </main>
 
 
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
   <footer class="mono">
 
     <span>
@@ -651,4 +664,5 @@
 </div>
 
 </body>
+
 </html>
