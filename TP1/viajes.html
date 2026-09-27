@@ -176,16 +176,36 @@
       width: 100%;
     }
 
-    /* RAWGRAPHS */
+    /* =========================
+       RAWGRAPHS
+       ========================= */
 
     .rawgraphs-section h2 {
+      max-width: 850px;
+
+      margin: 0;
+
       font-family: "Open Sans", sans-serif;
       font-weight: 500;
+
+      font-size: clamp(34px, 4vw, 52px);
+
+      line-height: 1.08;
+
       letter-spacing: -0.035em;
     }
 
     .rawgraphs-section .map-intro {
+      max-width: 690px;
+
+      margin: 20px 0 38px;
+
+      color: var(--muted);
+
       font-family: "Open Sans", sans-serif;
+      font-size: 17px;
+
+      line-height: 1.55;
     }
 
     .rawgraphs-section .section-label {
@@ -194,7 +214,7 @@
     }
 
     .rawgraphs-frame {
-      margin: 46px 0 0;
+      margin: 0;
 
       padding: 18px;
     }
@@ -207,7 +227,9 @@
       min-height: 600px;
     }
 
-    /* DATAWRAPPER */
+    /* =========================
+       DATAWRAPPER
+       ========================= */
 
     .datawrapper-frame {
       padding: 10px;
@@ -226,7 +248,9 @@
       border: 0;
     }
 
-    /* TABLEAU */
+    /* =========================
+       TABLEAU
+       ========================= */
 
     .tableau-frame {
       padding: 10px;
@@ -293,6 +317,14 @@
       .rawgraphs-frame,
       .datawrapper-frame {
         padding: 6px;
+      }
+
+      .rawgraphs-section h2 {
+        font-size: 32px;
+      }
+
+      .rawgraphs-section .map-intro {
+        font-size: 16px;
       }
 
       #datawrapper-vis-yoYDA {
